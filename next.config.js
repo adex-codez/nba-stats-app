@@ -4,7 +4,14 @@
  */
 await import("./src/env.js");
 
+import withBundleAnalyzer from "@next/bundle-analyzer";
+
+/*eslint-disable*/
+const withBundleAnalyzerConfig = withBundleAnalyzer({
+  enabled: process.env.ANALYZE === "true",
+});
+
 /** @type {import("next").NextConfig} */
 const config = {};
 
-export default config;
+export default withBundleAnalyzerConfig(config);

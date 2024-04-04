@@ -1,6 +1,7 @@
 import "~/styles/globals.css";
 
 import { Inter } from "next/font/google";
+import { NavBar } from "~/components/NavBar";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -20,7 +21,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`font-sans ${inter.variable}`}>{children}</body>
+      <body className={`font-sans antialiased ${inter.variable} bg-slate-50`}>
+        <NavBar />
+        <main className="px-[150px] ">{children}</main>
+      </body>
     </html>
   );
 }
